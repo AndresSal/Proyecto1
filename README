@@ -1,0 +1,37 @@
+PROYECTO 1 COMPUTACIÓN DISTRIBUIDA
+Andrés Salazar
+
+Coeficiente Jaccard/Tanimoto
+
+Entradas: chemicals.tsv, solution.tsv
+
+chemicals.tsv ==> listado de compuestos(secuencia de caracteres)
+		  c/linea representa información del compuesto
+		  1era columna = id del compuesto
+		  2nda columna = fórmula química
+
+solution.tsv  ==> listado de expresiones de valores de similitud 			  química entre compuestos.
+		  1era columna = id del compuesto a
+		  2nda columna = id del compuesto b
+		  3era columna = coeficiente Jaccard/Tanimoto T(a,b)
+
+T(a,b) = Nc/(Na+Nb-Nc)		Na= # elementos compuesto a
+				Nb= # elementos compuesto b
+				Nc= # elementos comunes entre a y b
+
+Ejemplo: compuesto a = "CCcc@@"		Na = 5(2C,2c,1@)
+	 compuesto b = "cccCC@@@"	Nb = 6(2C,3c,1@)
+					Nc = 5(2C,2c,1@)
+símbolos @ se cuentan solo una vez.
+
+Desarrollar un algoritmo que calcule T(a,b) mediante funcion reciba parámetros
+
+Aplicar programación paralela al algoritmo.
+
+aproximar valor T(a,b) para expresarlo con 2 decimales.
+
+implementar condicion @
+
+salida en orden alfabético segun id de a.
+ 
+  
