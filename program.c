@@ -4,14 +4,13 @@ int main(int argc, char** argv)
 {
 
 int M[100][3];
-int i,j;
+int i=0,j;
 FILE *entrada;
 
-char id[20];
-char formula[20];
-char intro[100];
+char id[200]={0};
+char formula[200]={0};
 char *token;
-char s[2]="\n";
+//char s[2]="\t";
 //lectura del archivo
 
 entrada = fopen("chemicals.tsv","r");
@@ -24,23 +23,30 @@ if (entrada == NULL)
 
 printf("\nEl contenido del archivo es \n\n");
 	
-	while(feof(entrada)==0)
+	while(fgets(id,200,entrada))
 	{
-		fgets(intro,30,entrada);
-		puts(intro);
+
+		token = strtok(id,"\n");
+		token = strtok(id,"\t");
+		puts(id);
+
 	}
+	
+	printf("\n Separar...\n");	
 
-	
-
-	
-	token = strtok(intro, s);
-	
-	while(token != NULL)
+	while(fgets(formula,200,entrada))
 	{
-		printf("%s\n",token);
+		token = strtok(formula,"\t");
+		token = strtok(formula,"\n");
+		puts(formula);
+		 
+	}
+	
+	printf("\n fin");
+	
+	
+	
 
-		token = strtok(NULL,s);
-	}	
 
 
 fclose(entrada);
